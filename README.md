@@ -3,7 +3,9 @@ Source code of the BTB Security "Challenger" interview exercise
 
 ## Links
 [challenger.btbsecurity.com](https://challenger.btbsecurity.com/)
+
 [Authentication token link](https://challenger.btbsecurity.com/auth)
+
 [Event list link](https://challenger.btbsecurity.com/get-events): Usage: "/get-events?from=1000&to=2000" will return event records 1000-2000
 
 ## Tasks - Data Collection
