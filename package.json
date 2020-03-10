@@ -1,0 +1,32 @@
+{
+  "name": "btb-security-challenger-exercise",
+  "version": "1.0.0",
+  "description": "Source code of the BTB Security \"Challenger\" interview exercise",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "ingest": "node src/ingest.js",
+    "visualize": "http-server public/ -p 8080 -a 127.0.0.1 -c-1",
+    "test": "nyc mocha test/",
+    "lint": "bash linter.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherBilg/btb-security-challenger-exercise.git"
+  },
+  "author": "Christopher Richard Bilger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChristopherBilg/btb-security-challenger-exercise/issues"
+  },
+  "homepage": "https://github.com/ChristopherBilg/btb-security-challenger-exercise#readme",
+  "publish": false,
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "jshint": "^2.11.0",
+    "mocha": "^7.1.0",
+    "nyc": "^15.0.0"
+  }
+}
