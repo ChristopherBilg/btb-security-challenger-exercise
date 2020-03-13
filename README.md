@@ -18,6 +18,7 @@ Source code of the BTB Security "Challenger" interview exercise
 2. Create graphs (for presentation) of some useful information seen in the normalized event data.
 
 ## Commands to run
+**Python 3.6+ was used as a language requirement as well as "npm install" to install the dependencies.**
 "npm run ingest" -> ingest the data from the public URL<br />
 "npm run visualize" -> start a local server (127.0.0.1:8080) to display the normalized data<br />
 "npm run test" -> run the testing scripts for the source code files<br />
