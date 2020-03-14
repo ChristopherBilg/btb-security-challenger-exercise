@@ -26,7 +26,7 @@ Source code of the BTB Security "Challenger" interview exercise
 "npm run test" -> run the testing scripts for the source code files<br />
 "npm run lint" -> run the linting scripts for the source and test code files<br />
 
-## Commands to run for full 'challenge requirements' (Running commands out of order will yeild correct error handled messages as well)
+## Commands to run for full 'challenge requirements' (Running commands out of order will yield correct error handled messages as well)
 1. "npm run ingest"
 2. "npm run normalize"
 3. "npm run visualize"

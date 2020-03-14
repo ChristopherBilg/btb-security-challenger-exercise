@@ -7,7 +7,7 @@ const baseUrl = 'https://challenger.btbsecurity.com';
 const authUrl = `${baseUrl}/auth`;
 const eventsUrl = `${baseUrl}/get-events`;
 const minimumEventId = 1;
-const maximumEventId = 4346;
+const maximumEventId = 4390;
 const eventsJsonFile = 'public/events_raw.json';
 let authCode = null;
 
@@ -103,7 +103,9 @@ const getEventData = (url, code) => {
       }
 
       // Write events to disk syncronously, create file if non-existent
-      fs.appendFileSync(eventsJsonFile, JSON.stringify(body), 'utf8');
+      body.forEach((element) => {
+        fs.appendFileSync(eventsJsonFile, JSON.stringify(element) + '\n', 'utf8');
+      });
     });
   }
 
