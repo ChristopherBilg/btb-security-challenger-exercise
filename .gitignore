@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Personally ignored files
+public/events_raw.json
+public/events_normalized.json

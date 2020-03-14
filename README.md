@@ -17,10 +17,17 @@ Source code of the BTB Security "Challenger" interview exercise
 1. Create a front-end web application to view the normalized event data.
 2. Create graphs (for presentation) of some useful information seen in the normalized event data.
 
-## Commands to run
-**Python 3.6+ was used as a language requirement as well as "npm install" to install the dependencies.**
+## Commands that can be run
+**Run the command: "npm install" to install the dependencies.**
 
-"npm run ingest" -> ingest the data from the public URL<br />
+"npm run ingest" -> ingest the data from the public URL (exports to public/events_raw.json)<br />
+"npm run normalize" -> take the ingested data, and normalize it into workable data (exports to public/events_normalized.json)<br />
 "npm run visualize" -> start a local server (127.0.0.1:8080) to display the normalized data<br />
 "npm run test" -> run the testing scripts for the source code files<br />
 "npm run lint" -> run the linting scripts for the source and test code files<br />
+
+## Commands to run for full 'challenge requirements' (Running commands out of order will yeild correct error handled messages as well)
+1. "npm run ingest"
+2. "npm run normalize"
+3. "npm run visualize"
+4. After running command #3, open up your browser to 127.0.0.1:8080 (localhost:8080)

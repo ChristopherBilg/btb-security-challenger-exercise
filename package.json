@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "ingest": "node src/ingest.js",
+    "normalize": "node src/normalize.js",
     "visualize": "http-server public/ -p 8080 -a 127.0.0.1 -c-1",
     "test": "nyc mocha test/",
     "lint": "bash linter.sh"
@@ -27,6 +28,7 @@
     "eslint-config-google": "^0.14.0",
     "jshint": "^2.11.0",
     "mocha": "^7.1.0",
-    "nyc": "^15.0.0"
+    "nyc": "^15.0.0",
+    "request": "^2.88.2"
   }
 }
