@@ -1,4 +1,5 @@
 /* jshint esversion: 8 */
+/* eslint max-len: ['error', { 'code': 200}] */
 
 const fs = require('fs');
 const request = require('request');

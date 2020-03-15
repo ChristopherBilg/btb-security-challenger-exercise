@@ -1,4 +1,5 @@
 /* jshint esversion: 8 */
+/* eslint indent: 0 */
 
 const fs = require('fs');
 
@@ -45,11 +46,11 @@ const normalize = (file) => {
   const logonSuccess = 'Logon-Success';
   const logonFailure = 'Logon-Failure';
   eventList.events.forEach((event) => {
-    let newEvent = {};
+    const newEvent = {};
 
     // AcmeApiId
     if (event.id) {
-      newEvent['AcmeApiId'] = event.id;
+      newEvent.AcmeApiId = event.id;
     }
 
     // UserName
@@ -62,21 +63,31 @@ const normalize = (file) => {
         username = event.user_Name.toLowerCase();
       }
 
-      newEvent['UserName'] = username;
+      newEvent.UserName = username;
     }
 
     // SourceIp
     if (event.ips) {
       if (typeof(event.ips) === 'object' && Array.isArray(event.ips)) {
-        newEvent['SourceIp'] = event.ips[1];
+        newEvent.SourceIp = event.ips[1];
       } else {
-        newEvent['SourceIp'] = event.ips;
+        newEvent.SourceIp = event.ips;
       }
     }
 
     // Target
     if (event.target) {
-      newEvent['Target'] = event.target;
+      newEvent.Target = event.target;
+    }
+
+    // EventTime
+    if (event.DateTimeAndStuff) {
+      const date = new Date(event.DateTimeAndStuff * epochOffset);
+      if (date) {
+        newEvent.EventTime = date;
+      } else {
+        newEvent.EventTime = '';
+      }
     }
 
     // Action
@@ -110,17 +121,7 @@ const normalize = (file) => {
           break;
       }
 
-      // EventTime
-      if (event.DateTimeAndStuff) {
-        const date = new Date(event.DateTimeAndStuff * epochOffset);
-        if (date) {
-          newEvent['EventTime'] = date;
-        } else {
-          newEvent['EventTime'] = '';
-        }
-      }
-
-      newEvent['Action'] = eventType;
+      newEvent.Action = eventType;
     }
 
     // Add to all events
@@ -135,7 +136,9 @@ const normalize = (file) => {
     }
   });
 
-  fs.appendFileSync(eventsJsonFileNormalized, JSON.stringify(eventListNormalized), 'utf8');
+  fs.appendFileSync(eventsJsonFileNormalized,
+                    JSON.stringify(eventListNormalized),
+                    'utf8');
 };
 
 normalize(eventsJsonFile);
