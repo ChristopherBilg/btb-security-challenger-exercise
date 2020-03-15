@@ -136,6 +136,13 @@ const normalize = (file) => {
     }
   });
 
+  // Sort the normalized events by AcmeApiId
+  eventListNormalized.events.sort((a, b) => {
+    a = a.AcmeApiId;
+    b = b.AcmeApiId;
+    return (a > b) ? 1 : -1;
+  });
+
   fs.appendFileSync(eventsJsonFileNormalized,
                     JSON.stringify(eventListNormalized),
                     'utf8');

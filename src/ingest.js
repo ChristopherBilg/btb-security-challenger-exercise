@@ -44,7 +44,6 @@ const getAuthCode = (url, callback) => {
     // Check that the response was a status code 200 (success)
     const responseCode = response.statusCode;
     if (responseCode !== 200) {
-      console.error(`Request error: status code should be 200, but was ${responseCode}`);
       return;
     }
 
@@ -99,7 +98,6 @@ const getEventData = (url, code) => {
       // Check that the response was a status code 200 (success)
       const responseCode = response.statusCode;
       if (responseCode !== 200) {
-        console.error(`Request error: status code should be 200, but was ${responseCode}`);
         return;
       }
 
