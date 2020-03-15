@@ -7,7 +7,7 @@ const baseUrl = 'https://challenger.btbsecurity.com';
 const authUrl = `${baseUrl}/auth`;
 const eventsUrl = `${baseUrl}/get-events`;
 const minimumEventId = 1;
-const maximumEventId = 4390;
+const maximumEventId = 5000;
 const eventsJsonFile = 'public/events_raw.json';
 let authCode = null;
 
