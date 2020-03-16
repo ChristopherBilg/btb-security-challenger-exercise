@@ -1,4 +1,6 @@
 /* jshint esversion: 8 */
+/* eslint indent: 0 */
+
 d3.json('events_normalized.json', (error, data) => {
   const tabulate = (data, columns) => {
     const table = (d3.select('body').append('table')
@@ -8,7 +10,7 @@ d3.json('events_normalized.json', (error, data) => {
     const tbody = table.append('tbody');
     data = data.events;
 
-    // append the header row
+    // Append the header row to the table
     (thead.append('tr')
      .selectAll('th')
      .data(columns).enter()
@@ -17,13 +19,13 @@ d3.json('events_normalized.json', (error, data) => {
        return column;
      }));
 
-    // create a row for each object in the data
+    // Create a data row for each object in the data (for each event)
     const rows = (tbody.selectAll('tr')
                   .data(data)
                   .enter()
                   .append('tr'));
 
-    // create a cell in each row for each column
+    // Create a cell for each data item in each event
     const cells = (rows.selectAll('td')
                    .data((row) => {
                      return columns.map((column) => {
@@ -39,7 +41,7 @@ d3.json('events_normalized.json', (error, data) => {
     return table;
   };
 
-  // render the table(s)
+  // Render the table
   tabulate(data, [
     'AcmeApiId', 'UserName', 'SourceIp',
     'Target', 'EventTime', 'Action',
