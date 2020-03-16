@@ -31,3 +31,6 @@ Source code of the BTB Security "Challenger" interview exercise
 2. "npm run normalize"
 3. "npm run visualize"
 4. After running command #3, open up your browser to 127.0.0.1:8080 (localhost:8080)
+
+# Important Note
+**When opening the webpage after running the "npm run visualize" command, please give it a few moments to actually load the webpage. There is over 750 KiB of data that D3.js needs to parse through and append to the webpage. This does happen on a separate thread from the viewport so no lag will be noticable; however, it is a fair amount of data to parse through.**
